@@ -8,6 +8,7 @@ Here's the difference:
 2. Bundled with rollup.
 3. Icon will not show by default and change default icon to electron.
 4. Add lint to the project.
+5. Add restore button and related event.
 
 ## Installation
 
@@ -43,9 +44,11 @@ Vue.use(VueTitlebar);
 |      platform | String   | --      | (required) specify current platform (win32, darwin, linux) |
 | isMinimizable | Boolean  | true    | show minimize button                                       |
 | isMaximizable | Boolean  | true    | show maximize button                                       |
+|   isMaximized | Boolean  | true    | if window is maximized                                     |
 |    isClosable | Boolean  | true    | show close button                                          |
 |    onMinimize | Function | --      | if minimize button is clicked                              |
 |    onMaximize | Function | --      | if maximize button is clicked                              |
+|     onRestore | Function | --      | if restore button is clicked                               |
 |       onClose | Function | --      | if close button is clicked                                 |
 |      showIcon | Boolean  | false   | theme (dark, light)                                        |
 |     showTitle | Boolean  | true    | theme (dark, light)                                        |
@@ -59,9 +62,11 @@ Vue.use(VueTitlebar);
   :theme="theme"
   :platform="platform"
   :on-close="close"
-  :on-maximize="toggleMaximize"
+  :on-maximize="maximize"
+  :on-restore="restore"
   :on-minimize="minimize"
   :is-maximizable="isMaximizable"
+  :is-maximized="isMaximized"
   :is-closable="isClosable"
   :is-minimizable="isMinimizable"
   :show-icon="showIcon"

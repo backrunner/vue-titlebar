@@ -79,10 +79,25 @@
         title="Maximize"
         tabindex="-1"
         @click="onMaximize()"
-        v-if="isMaximizable"
+        v-if="isMaximizable && !isMaximized"
       >
         <svg aria-hidden="true" version="1.1" width="10" height="10">
           <path d="M 0,0 0,10 10,10 10,0 Z M 1,1 9,1 9,9 1,9 Z"></path>
+        </svg>
+      </button>
+
+      <button
+        aria-label="restore"
+        title="Restore"
+        tabindex="-1"
+        @click="onRestore()"
+        v-if="isMaximizable && isMaximized"
+      >
+        <svg aria-hidden="true" version="1.1" width="10" height="10">
+          <path
+            d="m 2,1e-5 0,2 -2,0 0,8 8,0 0,-2 2,0 0,-8 z m 1,1 6,0 0,6 -1,0 0,-5
+          -5,0 z m -2,2 6,0 0,6 -6,0 z"
+          ></path>
         </svg>
       </button>
 
@@ -127,10 +142,17 @@ export default {
       type: Boolean,
       default: true,
     },
+    isMaximized: {
+      type: Boolean,
+      default: false,
+    },
     onMinimize: {
       type: Function,
     },
     onMaximize: {
+      type: Function,
+    },
+    onRestore: {
       type: Function,
     },
     onClose: {
