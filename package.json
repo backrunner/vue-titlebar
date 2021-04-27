@@ -1,19 +1,24 @@
 {
-  "name": "@wuild/vue-titlebar",
-  "version": "1.0.1",
-  "description": "Simple and easy to use title bar for electron  \r stylesheets are written in scss and require a loader for it.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Wuild",
+  "name": "@backrunner/vue-titlebar",
+  "version": "1.0.0",
+  "description": "Simple titlebar for electron.",
+  "main": "dist/vue-titlebar.js",
+  "author": "BackRunner",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "f2elint-scan": "f2elint scan",
+    "f2elint-fix": "f2elint fix"
+  },
   "directories": {
     "example": "examples"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Wuild/vue-titlebar.git"
+    "url": "git+https://github.com/backrunner/vue-titlebar.git"
   },
   "keywords": [
     "titlebar",
@@ -21,7 +26,20 @@
     "electron"
   ],
   "bugs": {
-    "url": "https://github.com/Wuild/vue-titlebar/issues"
+    "url": "https://github.com/backrunner/vue-titlebar/issues"
   },
-  "homepage": "https://github.com/Wuild/vue-titlebar#readme"
+  "homepage": "https://github.com/backrunner/vue-titlebar#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "f2elint": "^1.1.2",
+    "node-sass": "^4.14.1",
+    "postcss": "^8.2.13",
+    "rollup": "^2.45.2",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-vue": "^6.0.0"
+  }
 }
