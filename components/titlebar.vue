@@ -174,6 +174,7 @@ $titlebar-height: 28px;
   right: 0;
   z-index: 99999;
   height: $titlebar-height;
+  user-select: none;
 
   -webkit-app-region: drag;
 
